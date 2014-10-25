@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>BALINT-PC</Machine>
+    <WindowsUser>Balint</WindowsUser>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>1ecbb447-bdf0-4fe8-9af1-bfb190a4b6d8</PackageIdentityName>
+    <RegisteredManifestChecksum>AC296A595BDE5165A76E34595131914083754505470FD5FEF56761B7BE8F6799</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>1ecbb447-bdf0-4fe8-9af1-bfb190a4b6d8_1.0.0.0_neutral__bsgfdj3wbq7ey</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>1ecbb447-bdf0-4fe8-9af1-bfb190a4b6d8_bsgfdj3wbq7ey!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>1ecbb447-bdf0-4fe8-9af1-bfb190a4b6d8</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Balint</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\projects\ember_gep_interfesz\HCI\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-10-25T20:32:51.900</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\projects\ember_gep_interfesz\HCI\bin\Debug\HCI.exe">
+      <PackagePath>HCI.exe</PackagePath>
+      <Modified>2014-10-25T20:32:51.385</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\projects\ember_gep_interfesz\HCI\DataModel\SampleData.json">
+      <PackagePath>DataModel\SampleData.json</PackagePath>
+      <Modified>2014-10-25T20:31:51.634</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\projects\ember_gep_interfesz\HCI\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T04:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\projects\ember_gep_interfesz\HCI\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T04:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\projects\ember_gep_interfesz\HCI\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T04:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\projects\ember_gep_interfesz\HCI\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T04:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\projects\ember_gep_interfesz\HCI\Assets\LightGray.png">
+      <PackagePath>Assets\LightGray.png</PackagePath>
+      <Modified>2013-07-23T04:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\projects\ember_gep_interfesz\HCI\Assets\MediumGray.png">
+      <PackagePath>Assets\MediumGray.png</PackagePath>
+      <Modified>2013-07-23T04:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\projects\ember_gep_interfesz\HCI\Assets\DarkGray.png">
+      <PackagePath>Assets\DarkGray.png</PackagePath>
+      <Modified>2013-07-23T04:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\projects\ember_gep_interfesz\HCI\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+      <Modified>2014-10-25T20:32:51.016</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\projects\ember_gep_interfesz\HCI\bin\Debug\GroupedItemsPage.xbf">
+      <PackagePath>GroupedItemsPage.xbf</PackagePath>
+      <Modified>2014-10-25T20:32:51.019</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\projects\ember_gep_interfesz\HCI\bin\Debug\GroupDetailPage.xbf">
+      <PackagePath>GroupDetailPage.xbf</PackagePath>
+      <Modified>2014-10-25T20:32:51.022</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\projects\ember_gep_interfesz\HCI\bin\Debug\ItemDetailPage.xbf">
+      <PackagePath>ItemDetailPage.xbf</PackagePath>
+      <Modified>2014-10-25T20:32:51.025</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\projects\ember_gep_interfesz\HCI\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2014-10-25T20:32:51.646</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
