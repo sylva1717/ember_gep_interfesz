@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HCI", "HCI.csproj", "{91D1A206-3E4B-47D1-9E36-9D15679FFBAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91D1A206-3E4B-47D1-9E36-9D15679FFBAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91D1A206-3E4B-47D1-9E36-9D15679FFBAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91D1A206-3E4B-47D1-9E36-9D15679FFBAC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{91D1A206-3E4B-47D1-9E36-9D15679FFBAC}.Debug|ARM.ActiveCfg = Debug|ARM
+		{91D1A206-3E4B-47D1-9E36-9D15679FFBAC}.Debug|ARM.Build.0 = Debug|ARM
+		{91D1A206-3E4B-47D1-9E36-9D15679FFBAC}.Debug|ARM.Deploy.0 = Debug|ARM
+		{91D1A206-3E4B-47D1-9E36-9D15679FFBAC}.Debug|x64.ActiveCfg = Debug|x64
+		{91D1A206-3E4B-47D1-9E36-9D15679FFBAC}.Debug|x64.Build.0 = Debug|x64
+		{91D1A206-3E4B-47D1-9E36-9D15679FFBAC}.Debug|x64.Deploy.0 = Debug|x64
+		{91D1A206-3E4B-47D1-9E36-9D15679FFBAC}.Debug|x86.ActiveCfg = Debug|x86
+		{91D1A206-3E4B-47D1-9E36-9D15679FFBAC}.Debug|x86.Build.0 = Debug|x86
+		{91D1A206-3E4B-47D1-9E36-9D15679FFBAC}.Debug|x86.Deploy.0 = Debug|x86
+		{91D1A206-3E4B-47D1-9E36-9D15679FFBAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91D1A206-3E4B-47D1-9E36-9D15679FFBAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91D1A206-3E4B-47D1-9E36-9D15679FFBAC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{91D1A206-3E4B-47D1-9E36-9D15679FFBAC}.Release|ARM.ActiveCfg = Release|ARM
+		{91D1A206-3E4B-47D1-9E36-9D15679FFBAC}.Release|ARM.Build.0 = Release|ARM
+		{91D1A206-3E4B-47D1-9E36-9D15679FFBAC}.Release|ARM.Deploy.0 = Release|ARM
+		{91D1A206-3E4B-47D1-9E36-9D15679FFBAC}.Release|x64.ActiveCfg = Release|x64
+		{91D1A206-3E4B-47D1-9E36-9D15679FFBAC}.Release|x64.Build.0 = Release|x64
+		{91D1A206-3E4B-47D1-9E36-9D15679FFBAC}.Release|x64.Deploy.0 = Release|x64
+		{91D1A206-3E4B-47D1-9E36-9D15679FFBAC}.Release|x86.ActiveCfg = Release|x86
+		{91D1A206-3E4B-47D1-9E36-9D15679FFBAC}.Release|x86.Build.0 = Release|x86
+		{91D1A206-3E4B-47D1-9E36-9D15679FFBAC}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
