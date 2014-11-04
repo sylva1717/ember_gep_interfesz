@@ -13,6 +13,7 @@ namespace HCI
         private int amount;
         private string type;
 
+        [SQLite.AutoIncrement, SQLite.PrimaryKey]
         public int Id
         {
             get { return id; }

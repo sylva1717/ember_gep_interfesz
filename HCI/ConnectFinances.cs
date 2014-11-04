@@ -9,13 +9,12 @@ namespace HCI
 {
     class ConnectFinances
     {
-        SQLiteConnection conn;
+
         string connectionString;
 
         public ConnectFinances()
         {
             connectionString = @" Data Source = ..."; // ide kell majd a DB elérése
-            conn = new SQLiteConnection(connectionString);
             
         }
 
@@ -26,24 +25,42 @@ namespace HCI
             {
                 conn.RunInTransaction(()=>
                     {
-                        conn.Insert(new Finances() {Id=f.Id, Date=f.Date, Amount=f.Amount, Type=f.Type});
+                        conn.Insert(new Finances() {Date=f.Date, Amount=f.Amount, Type=f.Type});
                     });
             }
         }
 
-        public void DeleteRecord(int ID) // kukába húzásra hívódik
+        public void DeleteRecord(Finances f) // kukába húzásra hívódik
         {
-
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.RunInTransaction(() =>
+                    {
+                        conn.Delete(f);
+                    });
+            }
         }
 
-        public int MaxId() // visszaadja a max Id-t a táblában
+        public void UpdateRecord(Finances f)
         {
-            return 0;
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.RunInTransaction(() =>
+                    {
+                        conn.Update(f);
+                    });
+            }
         }
 
         public int Total() // visszaadja az egyenleget
         {
-            return 0;
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.RunInTransaction(() =>
+                    {
+                        conn.Query();
+                    });
+            }
         }
 
     }
