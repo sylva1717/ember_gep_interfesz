@@ -11,7 +11,7 @@ namespace HCI
         private int id;
         private DateTime date;
         private int amount;
-        private string type;
+        private int typeID;
 
         [SQLite.AutoIncrement, SQLite.PrimaryKey]
         public int Id
@@ -32,10 +32,11 @@ namespace HCI
             set { amount = value; }
         }
 
-        public string Type
+        public int TypeID
         {
-            get { return type; }
-            set { type = value; }
+            get { return typeID; }
+            set { typeID = value; }
         }
     }
+
 }

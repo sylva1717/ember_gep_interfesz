@@ -25,7 +25,7 @@ namespace HCI
             {
                 conn.RunInTransaction(()=>
                     {
-                        conn.Insert(new Finances() {Date=f.Date, Amount=f.Amount, Type=f.Type});
+                        conn.Insert(new Finances() {Date=f.Date, Amount=f.Amount, TypeID=f.TypeID});
                     });
             }
         }
