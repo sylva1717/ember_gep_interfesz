@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HCI
 {
-    class Type
+    class Type // NEM KELL!
     {
         private int id;
         private string type;
