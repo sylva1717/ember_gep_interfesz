@@ -20,6 +20,25 @@
         <x:String x:Key="AppName">My Application</x:String>
     </Page.Resources>
 
+    <Page.BottomAppBar>
+        <AppBar x:Name="bottomAppBar">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal" Visibility="{Binding 
+HasSelectedItems}">
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" 
+Grid.Column="2">
+                    <Button Content="Refresh"
+Command="{Binding RefreshCommand}" />
+                </StackPanel>
+            </Grid>
+        </AppBar>
+    </Page.BottomAppBar>
+
     <!--
         This grid acts as a root panel for the page that defines two rows:
         * Row 0 contains the back button and page title
@@ -46,7 +65,8 @@
             Grid.RowSpan="2"
             Padding="116,136,116,46"
             ItemsSource="{Binding Source={StaticResource itemsViewSource}}"
-            SelectionMode="None"
+            SelectionMode="Single"
+            SelectionChanged="ItemSelected"
             IsSwipeEnabled="false">
             <GridView.ItemTemplate>
                 <DataTemplate>
@@ -71,7 +91,7 @@
                 <ColumnDefinition Width="120"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="250"/>
-                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="500"/>
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton" Margin="39,59,39,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
                         Style="{StaticResource NavigationBackButtonNormalStyle}"
@@ -83,7 +103,7 @@
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
             <Button x:Name="addButton" Grid.Column="2" VerticalAlignment="Center" Click="addNew" >Add new</Button>
             <TextBlock x:Name="myBalance" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="3" 
-                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
+                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,30,40"/>
         </Grid>
 
         

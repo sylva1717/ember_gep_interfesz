@@ -125,15 +125,13 @@ namespace HCI
             Finances f = new Finances();
             f.Title = txtTitle.Text.ToString();
             f.Amount = int.Parse(txtAmount.Text.ToString());
-            f.Date = DateTime.Now;
+            f.Date = txtDate.Date.LocalDateTime + txtTime.Time;
             f.Type = comboTypes.SelectedItem.ToString();
             cf.InsertRecord(f);
             this.Frame.Navigate(typeof(MainPage));
         }
 
         
-
-
         
     }
 }

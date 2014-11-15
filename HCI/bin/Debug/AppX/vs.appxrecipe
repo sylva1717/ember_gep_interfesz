@@ -23,7 +23,7 @@
   <ItemGroup>
     <AppxPackagedFile Include="C:\projects\hci\HCI\bin\Debug\HCI.exe">
       <PackagePath>HCI.exe</PackagePath>
-      <Modified>2014-11-15T20:21:03.774</Modified>
+      <Modified>2014-11-15T21:30:38.035</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\TestPlatform\11.0\Redist\CommonConfiguration\neutral\Microsoft.VisualStudio.TestPlatform.Core.dll">
       <PackagePath>Microsoft.VisualStudio.TestPlatform.Core.dll</PackagePath>
@@ -95,7 +95,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\hci\HCI\bin\Debug\AddItem.xbf">
       <PackagePath>AddItem.xbf</PackagePath>
-      <Modified>2014-11-15T20:21:03.371</Modified>
+      <Modified>2014-11-15T21:18:22.798</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\hci\HCI\bin\Debug\GroupDetailPage.xbf">
       <PackagePath>GroupDetailPage.xbf</PackagePath>
@@ -107,11 +107,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\hci\HCI\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2014-11-15T20:21:03.374</Modified>
+      <Modified>2014-11-15T21:30:37.675</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\hci\HCI\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2014-11-15T20:21:04.357</Modified>
+      <Modified>2014-11-15T21:26:55.187</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

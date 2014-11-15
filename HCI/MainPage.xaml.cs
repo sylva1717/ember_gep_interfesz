@@ -104,5 +104,11 @@ namespace HCI
             this.Frame.Navigate(typeof(AddItem));
         }
 
+        private void ItemSelected(object sender, RoutedEventArgs e)
+        {
+            if (!bottomAppBar.IsOpen) {
+                bottomAppBar.IsOpen = true;
+            }
+        }
     }
 }

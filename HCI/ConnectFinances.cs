@@ -134,7 +134,7 @@ namespace HCI
             {
                 conn.RunInTransaction(() =>
                     {
-                        m_AllFinances = conn.Table<Finances>().ToList();
+                        m_AllFinances = conn.Table<Finances>().OrderByDescending(v1 => v1.Id).ToList();
                     });
             }
         }
