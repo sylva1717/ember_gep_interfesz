@@ -47,9 +47,12 @@
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="608" Margin="98,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="1258">
-            <TextBox x:Name="txtAmount" HorizontalAlignment="Left" Margin="33,63,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="68" Width="1185"/>
-            <Button Content="Save" HorizontalAlignment="Left" Margin="30,431,0,0" VerticalAlignment="Top"/>
-            <ComboBox x:Name="comboTypes" HorizontalAlignment="Left" Margin="33,181,0,0" VerticalAlignment="Top" Width="1185" Height="57"/>
+            <TextBox x:Name="txtAmount" HorizontalAlignment="Left" Margin="33,168,0,0" TextWrapping="Wrap" Text="Add amount" VerticalAlignment="Top" Height="52" Width="1185"/>
+            <Button Content="Save" HorizontalAlignment="Left" Margin="30,431,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
+            <ComboBox x:Name="comboTypes" HorizontalAlignment="Left" Margin="33,337,0,0" VerticalAlignment="Top" Width="1185" Height="51" />
+            <TextBox x:Name="txtTitle" HorizontalAlignment="Left" Margin="33,93,0,0" TextWrapping="Wrap" Text="Add a title" VerticalAlignment="Top" Width="1185" Height="53"/>
+            <DatePicker x:Name="txtDate" HorizontalAlignment="Left" Margin="33,262,0,0" VerticalAlignment="Top"/>
+            <TimePicker x:Name="txtTime" HorizontalAlignment="Left" Margin="415,262,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.3,0.5"/>
         </Grid>
     </Grid>
 </Page>

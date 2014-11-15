@@ -66,7 +66,6 @@ namespace HCI
             m_Types.Add("Tanulmányok");
             m_Types.Add("Túra, sport");
             m_Types.Add("Utazás");
-
             m_Types.Add("Fizetés");
             m_Types.Add("Ösztöndíj");
         }
@@ -77,7 +76,7 @@ namespace HCI
             {
                 conn.RunInTransaction(() =>
                 {
-                    conn.Insert(new Finances() { Date = f.Date, Amount = f.Amount, Type = f.Type });
+                    conn.Insert(new Finances() {Title = f.Title, Date = f.Date, Amount = f.Amount, Type = f.Type });
                 });
             }
         }

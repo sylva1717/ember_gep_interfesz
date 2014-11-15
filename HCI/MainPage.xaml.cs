@@ -67,17 +67,15 @@ namespace HCI
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
             // TODO: Assign a bindable collection of items to this.DefaultViewModel["Items"]
-           
+            
+            cf.RefreshBalance();
             myBalance.Text = this.cf.Balance.ToString() + " HUF";
             List<Finances> finances = new List<Finances>();
+            
+            cf.RefreshAllFinances();
             finances = cf.AllFinances;
-            //finances.Add(new Finances() { Date = new DateTime(), Amount = 1500, Type = "Összes" });
-            //finances.Add(new Finances() { Date = new DateTime(), Amount = 2200, Type = "Összes" });
-            //finances.Add(new Finances() { Date = new DateTime(), Amount = 1500, Type = "Összes" });
-            //finances.Add(new Finances() { Date = new DateTime(), Amount = 2200, Type = "Összes" });
             itemGridView.ItemsSource = finances;
-            
-            
+                 
         }
 
         #region NavigationHelper registration

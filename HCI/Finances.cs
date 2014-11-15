@@ -9,6 +9,7 @@ namespace HCI
     class Finances
     {
         private int id;
+        private string title;
         private DateTime date;
         private int amount;
         private string type;
@@ -36,6 +37,12 @@ namespace HCI
         {
             get { return type; }
             set { type = value; }
+        }
+
+        public string Title
+        {
+            get { return title; }
+            set { title = value; }
         }
     }
 
