@@ -5,8 +5,9 @@ Assets\MediumGray.png
 Assets\SmallLogo.scale-100.png
 Assets\SplashScreen.scale-100.png
 Assets\StoreLogo.scale-100.png
+AddItem.xbf
 App.xbf
 GroupDetailPage.xbf
-GroupedItemsPage.xbf
 ItemDetailPage.xbf
+MainPage.xbf
 DataModel\SampleData.json

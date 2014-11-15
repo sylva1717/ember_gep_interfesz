@@ -1,1 +1,1 @@
-C:\projects\ember_gep_interfesz\HCI\HCI.csproj;neutral
+C:\projects\hci\HCI\HCI.csproj;neutral

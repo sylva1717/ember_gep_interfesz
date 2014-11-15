@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace HCI
 {
-    class Controller
+    class FinancesController
     {
         ConnectFinances m_model;
 
-        Controller()
+        public FinancesController()
         {
             m_model = new ConnectFinances();
         }

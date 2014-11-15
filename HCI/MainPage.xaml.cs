@@ -1,9 +1,9 @@
 ﻿using HCI.Common;
-using HCI.Data;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -14,17 +14,27 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Grouped Items Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234231
+// The Items Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234233
 
 namespace HCI
 {
     /// <summary>
-    /// A page that displays a grouped collection of items.
+    /// A page that displays a collection of item previews.  In the Split Application this page
+    /// is used to display and select one of the available groups.
     /// </summary>
-    public sealed partial class GroupedItemsPage : Page
+    public sealed partial class MainPage : Page
     {
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
+        private ConnectFinances cf = new ConnectFinances();
+
+        /// <summary>
+        /// This can be changed to a strongly typed view model.
+        /// </summary>
+        public ObservableDictionary DefaultViewModel
+        {
+            get { return this.defaultViewModel; }
+        }
 
         /// <summary>
         /// NavigationHelper is used on each page to aid in navigation and 
@@ -35,19 +45,12 @@ namespace HCI
             get { return this.navigationHelper; }
         }
 
-        /// <summary>
-        /// This can be changed to a strongly typed view model.
-        /// </summary>
-        public ObservableDictionary DefaultViewModel
-        {
-            get { return this.defaultViewModel; }
-        }
-
-        public GroupedItemsPage()
+        public MainPage()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
+            pageTitle.Text = "HCI";
         }
 
         /// <summary>
@@ -61,40 +64,20 @@ namespace HCI
         /// <see cref="Frame.Navigate(Type, Object)"/> when this page was initially requested and
         /// a dictionary of state preserved by this page during an earlier
         /// session.  The state will be null the first time a page is visited.</param>
-        private async void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
+        private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
-            // TODO: Create an appropriate data model for your problem domain to replace the sample data
-            var sampleDataGroups = await SampleDataSource.GetGroupsAsync();
-            this.DefaultViewModel["Groups"] = sampleDataGroups;
-        }
-
-        /// <summary>
-        /// Invoked when a group header is clicked.
-        /// </summary>
-        /// <param name="sender">The Button used as a group header for the selected group.</param>
-        /// <param name="e">Event data that describes how the click was initiated.</param>
-        void Header_Click(object sender, RoutedEventArgs e)
-        {
-            // Determine what group the Button instance represents
-            var group = (sender as FrameworkElement).DataContext;
-
-            // Navigate to the appropriate destination page, configuring the new page
-            // by passing required information as a navigation parameter
-            this.Frame.Navigate(typeof(GroupDetailPage), ((SampleDataGroup)group).UniqueId);
-        }
-
-        /// <summary>
-        /// Invoked when an item within a group is clicked.
-        /// </summary>
-        /// <param name="sender">The GridView (or ListView when the application is snapped)
-        /// displaying the item clicked.</param>
-        /// <param name="e">Event data that describes the item clicked.</param>
-        void ItemView_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            // Navigate to the appropriate destination page, configuring the new page
-            // by passing required information as a navigation parameter
-            var itemId = ((SampleDataItem)e.ClickedItem).UniqueId;
-            this.Frame.Navigate(typeof(ItemDetailPage), itemId);
+            // TODO: Assign a bindable collection of items to this.DefaultViewModel["Items"]
+           
+            myBalance.Text = this.cf.Balance.ToString() + " HUF";
+            List<Finances> finances = new List<Finances>();
+            finances = cf.AllFinances;
+            //finances.Add(new Finances() { Date = new DateTime(), Amount = 1500, Type = "Összes" });
+            //finances.Add(new Finances() { Date = new DateTime(), Amount = 2200, Type = "Összes" });
+            //finances.Add(new Finances() { Date = new DateTime(), Amount = 1500, Type = "Összes" });
+            //finances.Add(new Finances() { Date = new DateTime(), Amount = 2200, Type = "Összes" });
+            itemGridView.ItemsSource = finances;
+            
+            
         }
 
         #region NavigationHelper registration
@@ -119,5 +102,9 @@ namespace HCI
         }
 
         #endregion
+        private void addNew(object sender, RoutedEventArgs e) {
+            this.Frame.Navigate(typeof(AddItem));
+        }
+
     }
 }
