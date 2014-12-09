@@ -52,7 +52,7 @@ namespace HCI
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
-            pageTitle.Text = "Add new item";
+            pageTitle.Text = "Új bejegyzés hozzáadása";
         }
 
         /// <summary>
@@ -130,6 +130,12 @@ namespace HCI
             cf.InsertRecord(f);
             this.Frame.Navigate(typeof(MainPage));
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+
+        }
+
 
         
         

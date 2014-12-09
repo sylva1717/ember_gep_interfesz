@@ -1,0 +1,4 @@
+MainPackage=C:\projects\hci\HCI\bin\ARM\Release\HCI_0.8.0.1_Bundle\HCI_0.8.0.1_ARM.appx
+SymbolPackage=C:\projects\hci\HCI\AppPackages\HCI_0.8.0.1_Test\HCI_0.8.0.1_ARM.appxsym
+ResourcePack=C:\projects\hci\HCI\bin\ARM\Release\HCI_0.8.0.1_Bundle\HCI_0.8.0.1_scale-140.appx
+ResourcePack=C:\projects\hci\HCI\bin\ARM\Release\HCI_0.8.0.1_Bundle\HCI_0.8.0.1_scale-180.appx

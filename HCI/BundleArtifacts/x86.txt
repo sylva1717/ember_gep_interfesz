@@ -1,0 +1,2 @@
+MainPackage=C:\projects\hci\HCI\bin\x86\Release\HCI_0.8.0.1_Bundle\HCI_0.8.0.1_x86.appx
+SymbolPackage=C:\projects\hci\HCI\AppPackages\HCI_0.8.0.1_Test\HCI_0.8.0.1_x86.appxsym

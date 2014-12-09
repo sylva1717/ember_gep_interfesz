@@ -7,7 +7,7 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="1ecbb447-bdf0-4fe8-9af1-bfb190a4b6d8" Publisher="CN=Balint" Version="1.0.0.0" ProcessorArchitecture="neutral" />
+  <Identity Name="1ecbb447-bdf0-4fe8-9af1-bfb190a4b6d8" Publisher="CN=Balint" Version="0.8.0.0" ProcessorArchitecture="neutral" />
   <Properties>
     <DisplayName>HCI</DisplayName>
     <PublisherDisplayName>HCI Team</PublisherDisplayName>
@@ -23,7 +23,11 @@
   <Applications>
     <Application Id="App" Executable="HCI.exe" EntryPoint="HCI.App">
       <m2:VisualElements DisplayName="HCI" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="HCI" ForegroundText="light" BackgroundColor="#464646">
+        <m2:DefaultTile ShortName="Dollar"></m2:DefaultTile>
         <m2:SplashScreen Image="Assets\SplashScreen.png" />
+        <m2:InitialRotationPreference>
+          <m2:Rotation Preference="landscape" />
+        </m2:InitialRotationPreference>
       </m2:VisualElements>
     </Application>
   </Applications>

@@ -32,8 +32,8 @@ HasSelectedItems}">
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" 
 Grid.Column="2">
-                    <Button Content="Refresh"
-Command="{Binding RefreshCommand}" />
+                    <Button Content="Törlés" Click="DeleteItem"/>
+                    <Button Content="Szerkesztés"/>
                 </StackPanel>
             </Grid>
         </AppBar>
@@ -53,7 +53,7 @@ Command="{Binding RefreshCommand}" />
         <Grid.RowDefinitions>
             <RowDefinition Height="140"/>
             <RowDefinition Height="*"/>
-            
+
         </Grid.RowDefinitions>
 
         <!-- Horizontal scrolling grid -->
@@ -70,7 +70,7 @@ Command="{Binding RefreshCommand}" />
             IsSwipeEnabled="false">
             <GridView.ItemTemplate>
                 <DataTemplate>
-                    <Grid HorizontalAlignment="Left" Width="250" Height="250">
+                    <Grid HorizontalAlignment="Left" Width="250" Height="250" >
                         <Border Background="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}">
                             <Image Source="{Binding ImagePath}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}"/>
                         </Border>
@@ -101,12 +101,13 @@ Command="{Binding RefreshCommand}" />
                         AutomationProperties.ItemType="Navigation Button"/>
             <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
-            <Button x:Name="addButton" Grid.Column="2" VerticalAlignment="Center" Click="addNew" >Add new</Button>
+            <Button x:Name="addButton" Grid.Column="1" VerticalAlignment="Center" Click="addNew" Margin="376,57,-3,37" Height="46" Width="123" >Add new</Button>
             <TextBlock x:Name="myBalance" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="3" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,30,40"/>
+            <ComboBox x:Name="comboTypes" Grid.Column="2" Margin="0,59,0,0" VerticalAlignment="Top" Height="41" PlaceholderText="Összes kategória" SelectionChanged="comboTypes_SelectionChanged"/>
         </Grid>
 
-        
+
 
     </Grid>
 </Page>

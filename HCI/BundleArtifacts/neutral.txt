@@ -1,0 +1,4 @@
+MainPackage=C:\projects\hci\HCI\bin\Debug\HCI_0.8.0.0_Bundle\HCI_0.8.0.0_AnyCPU_Debug.appx
+SymbolPackage=C:\projects\hci\HCI\AppPackages\HCI_0.8.0.0_Debug_Test\HCI_0.8.0.0_AnyCPU_Debug.appxsym
+ResourcePack=C:\projects\hci\HCI\bin\Debug\HCI_0.8.0.0_Bundle\HCI_0.8.0.0_scale-140.appx
+ResourcePack=C:\projects\hci\HCI\bin\Debug\HCI_0.8.0.0_Bundle\HCI_0.8.0.0_scale-180.appx

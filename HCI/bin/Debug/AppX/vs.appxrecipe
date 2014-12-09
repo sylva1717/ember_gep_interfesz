@@ -6,7 +6,7 @@
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>1ecbb447-bdf0-4fe8-9af1-bfb190a4b6d8</PackageIdentityName>
-    <RegisteredManifestChecksum>5DF3ABB2F12A84A2D5C087336E13C686AB4236A718EFEE461E9BCDB85F6E10D7</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>A3D20C6B043538C063C2214EDF8275A0664AC31FDA97337E9350803C9388A88E</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>1ecbb447-bdf0-4fe8-9af1-bfb190a4b6d8_1.0.0.0_neutral__bsgfdj3wbq7ey</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>1ecbb447-bdf0-4fe8-9af1-bfb190a4b6d8_bsgfdj3wbq7ey!App</RegisteredUserModeAppID>
     <RegisteredPackageID>1ecbb447-bdf0-4fe8-9af1-bfb190a4b6d8</RegisteredPackageID>
@@ -17,13 +17,13 @@
     <AppXManifest Include="C:\projects\hci\HCI\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-11-15T14:54:33.809</Modified>
+      <Modified>2014-11-30T14:52:04.155</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\projects\hci\HCI\bin\Debug\HCI.exe">
       <PackagePath>HCI.exe</PackagePath>
-      <Modified>2014-11-15T21:30:38.035</Modified>
+      <Modified>2014-11-30T14:52:03.773</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\TestPlatform\11.0\Redist\CommonConfiguration\neutral\Microsoft.VisualStudio.TestPlatform.Core.dll">
       <PackagePath>Microsoft.VisualStudio.TestPlatform.Core.dll</PackagePath>
@@ -53,14 +53,25 @@
       <PackagePath>vstest.executionengine.appcontainer.x86.exe</PackagePath>
       <Modified>2013-10-05T00:38:22.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\projects\hci\HCI\DataModel\SampleData.json">
-      <PackagePath>DataModel\SampleData.json</PackagePath>
-      <Modified>2014-11-09T17:31:18.064</Modified>
+    <AppxPackagedFile Include="C:\projects\hci\HCI\Assets\Logo.scale-140.png">
+      <PackagePath>Assets\Logo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-11-30T14:50:00.746</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\projects\hci\HCI\Assets\Logo.scale-180.png">
+      <PackagePath>Assets\Logo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-11-30T14:49:37.328</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\projects\hci\HCI\Assets\Logo.scale-80.png">
+      <PackagePath>Assets\Logo.scale-80.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-11-30T14:51:35.327</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\hci\HCI\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-11-09T17:31:18.018</Modified>
+      <Modified>2014-11-30T14:51:05.518</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\hci\HCI\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
@@ -89,6 +100,10 @@
       <PackagePath>Assets\DarkGray.png</PackagePath>
       <Modified>2014-11-09T17:31:18.016</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\projects\hci\HCI\DataModel\SampleData.json">
+      <PackagePath>DataModel\SampleData.json</PackagePath>
+      <Modified>2014-11-09T17:31:18.064</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\hci\HCI\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
       <Modified>2014-11-09T17:31:18.208</Modified>
@@ -107,11 +122,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\hci\HCI\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2014-11-15T21:30:37.675</Modified>
+      <Modified>2014-11-17T23:13:42.582</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\hci\HCI\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2014-11-15T21:26:55.187</Modified>
+      <Modified>2014-11-30T14:52:03.967</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

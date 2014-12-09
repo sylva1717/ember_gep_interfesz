@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -50,7 +51,7 @@ namespace HCI
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
-            pageTitle.Text = "HCI";
+            pageTitle.Text = "Dollar";
         }
 
         /// <summary>
@@ -75,6 +76,10 @@ namespace HCI
             cf.RefreshAllFinances();
             finances = cf.AllFinances;
             itemGridView.ItemsSource = finances;
+
+            List<string> ComboList = new List<string>();
+            ComboList = cf.Types;
+            comboTypes.ItemsSource = ComboList;
                  
         }
 
@@ -109,6 +114,73 @@ namespace HCI
             if (!bottomAppBar.IsOpen) {
                 bottomAppBar.IsOpen = true;
             }
+        }
+
+        
+
+        private void DeleteItem(object sender, RoutedEventArgs e)
+        {
+            //// Create the message dialog and set its content
+            //var messageDialog = new MessageDialog("Are you sure you want permanently delete the selected item?");
+
+            //// Add commands and set their callbacks; both buttons use the same callback function instead of inline event handlers
+            //messageDialog.Commands.Add(new UICommand(
+            //    "Yes",
+            //    new UICommandInvokedHandler(this.CommandInvokedHandler)));
+            //messageDialog.Commands.Add(new UICommand(
+            //    "No",
+            //    new UICommandInvokedHandler(this.CommandInvokedHandler)));
+
+            //// Set the command that will be invoked by default
+            //messageDialog.DefaultCommandIndex = 0;
+
+            //// Set the command to be invoked when escape is pressed
+            //messageDialog.CancelCommandIndex = 1;
+
+            //// Show the message dialog
+            //await messageDialog.ShowAsync();
+            Finances f = new Finances();
+            if (itemGridView.SelectedItem != null)
+            {
+                // Create the message dialog and set its content
+
+                itemGridView.Items.Remove(itemGridView.SelectedIndex);
+                f = (Finances)itemGridView.SelectedItem;
+                cf.DeleteRecord(f);
+                this.Reload();
+            }
+            
+        }
+
+        //private void CommandInvokedHandler(IUICommand command)
+        //{
+            
+        //}
+
+        public bool Reload() { return Reload(null); }
+
+        private bool Reload(object param)
+        {
+            Type type = this.Frame.CurrentSourcePageType;
+            if (this.Frame.BackStack.Any())
+            {
+                type = this.Frame.BackStack.Last().SourcePageType;
+                param = this.Frame.BackStack.Last().Parameter;
+            }
+            try { return this.Frame.Navigate(type, param); }
+            finally { this.Frame.BackStack.Remove(this.Frame.BackStack.Last()); }
+        }
+
+        private void comboTypes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string type = comboTypes.SelectedItem.ToString();
+            cf.RefreshTypedBalance(type);
+            myBalance.Text = this.cf.TypedBalance.ToString() + " HUF";
+            List<Finances> finances = new List<Finances>();
+
+            cf.RefreshAllFinances();
+            finances = cf.AllFinances;
+            itemGridView.ItemsSource = finances;
         }
     }
 }

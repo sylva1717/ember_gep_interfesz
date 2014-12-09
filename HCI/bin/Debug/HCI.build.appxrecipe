@@ -38,8 +38,17 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\TestPlatform\11.0\Redist\CommonConfiguration\neutral\vstest.executionengine.appcontainer.x86.exe">
       <PackagePath>vstest.executionengine.appcontainer.x86.exe</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\projects\hci\HCI\DataModel\SampleData.json">
-      <PackagePath>DataModel\SampleData.json</PackagePath>
+    <AppxPackagedFile Include="C:\projects\hci\HCI\Assets\Logo.scale-140.png">
+      <PackagePath>Assets\Logo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\projects\hci\HCI\Assets\Logo.scale-180.png">
+      <PackagePath>Assets\Logo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\projects\hci\HCI\Assets\Logo.scale-80.png">
+      <PackagePath>Assets\Logo.scale-80.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\hci\HCI\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
@@ -65,6 +74,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\hci\HCI\Assets\DarkGray.png">
       <PackagePath>Assets\DarkGray.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\projects\hci\HCI\DataModel\SampleData.json">
+      <PackagePath>DataModel\SampleData.json</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\projects\hci\HCI\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
