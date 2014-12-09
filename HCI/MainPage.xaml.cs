@@ -159,6 +159,9 @@ namespace HCI
 
         public bool Reload() { return Reload(null); }
 
+        /*
+         * Oldal frissítése törlés után
+         */ 
         private bool Reload(object param)
         {
             Type type = this.Frame.CurrentSourcePageType;
@@ -171,6 +174,9 @@ namespace HCI
             finally { this.Frame.BackStack.Remove(this.Frame.BackStack.Last()); }
         }
 
+        /*
+         * Kategória szerinti szűrés
+         */
         private void comboTypes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string type = comboTypes.SelectedItem.ToString();

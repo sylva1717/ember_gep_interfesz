@@ -12,7 +12,7 @@
 
     <Page.Resources>
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
-        
+
     </Page.Resources>
 
     <!--
@@ -47,13 +47,14 @@
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="608" Margin="98,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="1258">
-            <TextBox x:Name="txtAmount" HorizontalAlignment="Left" Margin="33,168,0,0" Padding="5, 12" TextWrapping="Wrap" PlaceholderText="Összeg" VerticalAlignment="Top" Height="52" Width="1185"/>
-            <Button Content="Mentés" HorizontalAlignment="Left" Margin="30,431,0,0" VerticalAlignment="Top" Click="Button_Click_1" Height="54" Width="164"/>
-            <ComboBox x:Name="comboTypes" HorizontalAlignment="Left" Margin="33,337,0,0" VerticalAlignment="Top" PlaceholderText="Válasszon kategóriát" Width="1185" Height="51" />
-            <TextBox x:Name="txtTitle" HorizontalAlignment="Left" Margin="33,93,0,0" Padding="5, 12" TextWrapping="Wrap" PlaceholderText="Megnevezés" VerticalAlignment="Top" Width="1185" Height="53"/>
-            <DatePicker x:Name="txtDate" HorizontalAlignment="Left" Margin="33,262,0,0" VerticalAlignment="Top"/>
-            <TimePicker x:Name="txtTime" HorizontalAlignment="Left" Margin="415,262,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.3,0.5"/>
-            <Button Content="Vissza a főoldalra" HorizontalAlignment="Left" Margin="216,431,0,0" VerticalAlignment="Top" Height="54" Width="169" Click="Button_Click_2"/>
+            <TextBox x:Name="txtAmount" HorizontalAlignment="Left" Margin="33,91,0,0" Padding="5, 12" TextWrapping="Wrap" PlaceholderText="Összeg" VerticalAlignment="Top" Height="55" Width="1185"/>
+            <Button Content="Mentés" HorizontalAlignment="Left" Margin="30,431,0,0" VerticalAlignment="Top" Click="Button_Click_1" Height="55" Width="164"/>
+            <ComboBox x:Name="comboTypes" HorizontalAlignment="Left" Margin="33,250,0,0" VerticalAlignment="Top" PlaceholderText="Válasszon kategóriát" Width="1185" Height="55" />
+            <TextBox x:Name="txtTitle" HorizontalAlignment="Left" Margin="33,10,0,0" Padding="5, 12" TextWrapping="Wrap" PlaceholderText="Megnevezés" VerticalAlignment="Top" Width="1185" Height="55"/>
+            <DatePicker x:Name="txtDate" HorizontalAlignment="Left" Margin="33,333,0,0" VerticalAlignment="Top" Height="55"/>
+            <TimePicker x:Name="txtTime" HorizontalAlignment="Left" Margin="412,333,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.3,0.5"/>
+            <Button Content="Vissza a főoldalra" HorizontalAlignment="Left" Margin="216,431,0,0" VerticalAlignment="Top" Height="55" Width="169" Click="Button_Click_2"/>
+            <ComboBox HorizontalAlignment="Left" Margin="33,170,0,0" VerticalAlignment="Top" Width="1185" Height="55"/>
         </Grid>
     </Grid>
 </Page>
