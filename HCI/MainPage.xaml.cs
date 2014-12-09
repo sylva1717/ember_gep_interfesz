@@ -178,8 +178,8 @@ namespace HCI
             myBalance.Text = this.cf.TypedBalance.ToString() + " HUF";
             List<Finances> finances = new List<Finances>();
 
-            cf.RefreshAllFinances();
-            finances = cf.AllFinances;
+            cf.RefreshTypedFinances(type);
+            finances = cf.TypedFinances;
             itemGridView.ItemsSource = finances;
         }
     }

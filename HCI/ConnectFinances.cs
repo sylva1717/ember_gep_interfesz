@@ -33,6 +33,14 @@ namespace HCI
             set { m_AllFinances = value; }
         }
 
+        List<Finances> m_TypedFinances;
+
+        internal List<Finances> TypedFinances
+        {
+            get { return m_TypedFinances; }
+            set { m_TypedFinances = value; }
+        }
+
         List<string> m_Types;
 
         public List<string> Types
@@ -136,6 +144,17 @@ namespace HCI
                     {
                         m_AllFinances = conn.Table<Finances>().OrderByDescending(v1 => v1.Id).ToList();
                     });
+            }
+        }
+
+        public void RefreshTypedFinances(string type) // az összes tételt frissíti egy adott kategóriára
+        {
+            using (var conn = new SQLiteConnection(m_connectionString))
+            {
+                conn.RunInTransaction(() =>
+                {
+                    m_TypedFinances = conn.Table<Finances>().Where(v1 => v1.Type == type).OrderByDescending(v1 => v1.Id).ToList();
+                });
             }
         }
 
