@@ -54,7 +54,11 @@
             <DatePicker x:Name="txtDate" HorizontalAlignment="Left" Margin="33,333,0,0" VerticalAlignment="Top" Height="55"/>
             <TimePicker x:Name="txtTime" HorizontalAlignment="Left" Margin="412,333,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.3,0.5"/>
             <Button Content="Vissza a főoldalra" HorizontalAlignment="Left" Margin="216,431,0,0" VerticalAlignment="Top" Height="55" Width="169" Click="Button_Click_2"/>
-            <ComboBox HorizontalAlignment="Left" Margin="33,170,0,0" VerticalAlignment="Top" Width="1185" Height="55"/>
+            <ComboBox x:Name="itemType" SelectedIndex="0" HorizontalAlignment="Left" Margin="33,170,0,0" VerticalAlignment="Top" Width="1185" Height="55">
+                <ComboBoxItem Tag="0">Kiadás</ComboBoxItem>
+                <ComboBoxItem Tag="1">Bevétel</ComboBoxItem>
+                
+            </ComboBox>
         </Grid>
     </Grid>
 </Page>

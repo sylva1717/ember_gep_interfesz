@@ -71,6 +71,14 @@ namespace HCI
             
             cf.RefreshBalance();
             myBalance.Text = this.cf.Balance.ToString() + " HUF";
+            if (this.cf.Balance > 0)
+            {
+                myBalance.Foreground = new SolidColorBrush(Windows.UI.Colors.Lime);
+            }
+            else
+            {
+                myBalance.Foreground = new SolidColorBrush(Windows.UI.Colors.OrangeRed);
+            }
             List<Finances> finances = new List<Finances>();
             
             cf.RefreshAllFinances();

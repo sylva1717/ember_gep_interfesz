@@ -71,7 +71,7 @@ namespace HCI
             List<string> ComboList = new List<string>();
             ComboList = cf.Types;
             comboTypes.ItemsSource = ComboList;
-            
+         
         }
 
         /// <summary>
@@ -109,28 +109,29 @@ namespace HCI
 
         #endregion
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Finances f = new Finances();
-            f.Title = "new";
-            f.Amount = 555;
-            f.Date = DateTime.Now;
-            f.Type = "asa";
-            cf.InsertRecord(f);
-            
-        }
-
+       
+        /*
+         * Add new item
+         */ 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            int amount = int.Parse(txtAmount.Text.ToString());
+            if (itemType.SelectedIndex == 0)
+            {
+                amount *= -1;
+            }
             Finances f = new Finances();
             f.Title = txtTitle.Text.ToString();
-            f.Amount = int.Parse(txtAmount.Text.ToString());
+            f.Amount = amount;
             f.Date = txtDate.Date.LocalDateTime + txtTime.Time;
             f.Type = comboTypes.SelectedItem.ToString();
             cf.InsertRecord(f);
             this.Frame.Navigate(typeof(MainPage));
         }
 
+        /**
+         * Back to home
+         **/
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MainPage));
