@@ -119,6 +119,7 @@
     <Compile Include="ConnectFinances.cs" />
     <Compile Include="FinancesController.cs" />
     <Compile Include="Finances.cs" />
+    <Compile Include="GridTemplateSelector.cs" />
     <Compile Include="GroupDetailPage.xaml.cs">
       <DependentUpon>GroupDetailPage.xaml</DependentUpon>
     </Compile>

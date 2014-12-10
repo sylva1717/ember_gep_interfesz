@@ -18,6 +18,34 @@
 
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
         <x:String x:Key="AppName">My Application</x:String>
+        <DataTemplate x:Key="PlusTemplate">
+            <Grid HorizontalAlignment="Left" Width="250" Height="250">
+                <Border Background="Green"/>
+                <StackPanel VerticalAlignment="Top" Background="{ThemeResource ListViewItemOverlayBackgroundThemeBrush}">
+                    <TextBlock Text="{Binding Amount}" Foreground="{ThemeResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" Height="40" Margin="15,20,15,0" FontWeight="SemiBold" FontSize="35"/>
+                    <TextBlock Text="{Binding Title}" Foreground="{ThemeResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" Height="130" Margin="15,0,15,0" FontWeight="SemiBold" FontSize="22"/>
+
+                    <TextBlock Text="{Binding Type}" Foreground="{ThemeResource ListViewItemOverlaySecondaryForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" TextWrapping="NoWrap" Margin="15,0,15,10" FontSize="14"/>
+                    <TextBlock Text="{Binding Date}" Foreground="{ThemeResource ListViewItemOverlaySecondaryForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" TextWrapping="NoWrap" Margin="15,0,15,10" FontSize="14"/>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="MinusTemplate">
+            <Grid HorizontalAlignment="Left" Width="250" Height="250">
+                <Border Background="Red"/>
+                <StackPanel VerticalAlignment="Top" Background="{ThemeResource ListViewItemOverlayBackgroundThemeBrush}">
+                    <TextBlock Text="{Binding Amount}" Foreground="{ThemeResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" Height="40" Margin="15,20,15,0" FontWeight="SemiBold" FontSize="35"/>
+                    <TextBlock Text="{Binding Title}" Foreground="{ThemeResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" Height="130" Margin="15,0,15,0" FontWeight="SemiBold" FontSize="22"/>
+
+                    <TextBlock Text="{Binding Type}" Foreground="{ThemeResource ListViewItemOverlaySecondaryForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" TextWrapping="NoWrap" Margin="15,0,15,10" FontSize="14"/>
+                    <TextBlock Text="{Binding Date}" Foreground="{ThemeResource ListViewItemOverlaySecondaryForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" TextWrapping="NoWrap" Margin="15,0,15,10" FontSize="14"/>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+
+        <local:GridTemplateSelector x:Name="MyGridTemplateSelector"
+                                    PlusTemplate="{StaticResource PlusTemplate}"
+                                    MinusTemplate="{StaticResource MinusTemplate}"/>
     </Page.Resources>
 
     <Page.BottomAppBar>
@@ -65,24 +93,12 @@ Grid.Column="2">
             Grid.RowSpan="2"
             Padding="116,136,116,46"
             ItemsSource="{Binding Source={StaticResource itemsViewSource}}"
+            ItemTemplateSelector="{StaticResource MyGridTemplateSelector}"
             SelectionMode="Single"
             SelectionChanged="ItemSelected"
+            SelectedItem="{Binding Selected, Mode=TwoWay}"
             IsSwipeEnabled="false">
-            <GridView.ItemTemplate>
-                <DataTemplate>
-                    <Grid HorizontalAlignment="Left" Width="250" Height="250" >
-                        <Border Background="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}">
-                            <Image Source="{Binding ImagePath}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}"/>
-                        </Border>
-                        <StackPanel VerticalAlignment="Bottom" Background="{ThemeResource ListViewItemOverlayBackgroundThemeBrush}">
-                            <TextBlock Text="{Binding Title}" Foreground="{ThemeResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" Height="60" Margin="15,0,15,0" FontWeight="SemiBold"/>
-                            <TextBlock Text="{Binding Amount}" Foreground="{ThemeResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" Height="60" Margin="15,0,15,0" FontWeight="SemiBold"/>
-                            <TextBlock Text="{Binding Type}" Foreground="{ThemeResource ListViewItemOverlaySecondaryForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" TextWrapping="NoWrap" Margin="15,0,15,10" FontSize="12"/>
-                            <TextBlock Text="{Binding Date}" Foreground="{ThemeResource ListViewItemOverlaySecondaryForegroundThemeBrush}" Style="{StaticResource BaseTextBlockStyle}" TextWrapping="NoWrap" Margin="15,0,15,10" FontSize="12"/>
-                        </StackPanel>
-                    </Grid>
-                </DataTemplate>
-            </GridView.ItemTemplate>
+            
         </GridView>
 
         <!-- Back button and page title -->

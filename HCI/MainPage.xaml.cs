@@ -80,10 +80,13 @@ namespace HCI
                 myBalance.Foreground = new SolidColorBrush(Windows.UI.Colors.OrangeRed);
             }
             List<Finances> finances = new List<Finances>();
+            List<Finances> newfinances = new List<Finances>();
             
             cf.RefreshAllFinances();
             finances = cf.AllFinances;
             itemGridView.ItemsSource = finances;
+
+            
 
             List<string> ComboList = new List<string>();
             ComboList = cf.Types;
@@ -126,27 +129,27 @@ namespace HCI
 
         
 
-        private void DeleteItem(object sender, RoutedEventArgs e)
+        private async void DeleteItem(object sender, RoutedEventArgs e)
         {
-            //// Create the message dialog and set its content
-            //var messageDialog = new MessageDialog("Are you sure you want permanently delete the selected item?");
+            // Create the message dialog and set its content
+            var messageDialog = new MessageDialog("Biztosan törli a kiválasztott elemet?");
 
-            //// Add commands and set their callbacks; both buttons use the same callback function instead of inline event handlers
-            //messageDialog.Commands.Add(new UICommand(
-            //    "Yes",
-            //    new UICommandInvokedHandler(this.CommandInvokedHandler)));
-            //messageDialog.Commands.Add(new UICommand(
-            //    "No",
-            //    new UICommandInvokedHandler(this.CommandInvokedHandler)));
+            // Add commands and set their callbacks; both buttons use the same callback function instead of inline event handlers
+            messageDialog.Commands.Add(new UICommand(
+                "Yes",
+                new UICommandInvokedHandler(this.CommandInvokedHandler)));
+            messageDialog.Commands.Add(new UICommand(
+                "No",
+                new UICommandInvokedHandler(this.CommandInvokedHandler)));
 
-            //// Set the command that will be invoked by default
-            //messageDialog.DefaultCommandIndex = 0;
+            // Set the command that will be invoked by default
+            messageDialog.DefaultCommandIndex = 0;
 
-            //// Set the command to be invoked when escape is pressed
-            //messageDialog.CancelCommandIndex = 1;
+            // Set the command to be invoked when escape is pressed
+            messageDialog.CancelCommandIndex = 1;
 
-            //// Show the message dialog
-            //await messageDialog.ShowAsync();
+            // Show the message dialog
+            await messageDialog.ShowAsync();
             Finances f = new Finances();
             if (itemGridView.SelectedItem != null)
             {
@@ -160,10 +163,10 @@ namespace HCI
             
         }
 
-        //private void CommandInvokedHandler(IUICommand command)
-        //{
-            
-        //}
+        private void CommandInvokedHandler(IUICommand command)
+        {
+
+        }
 
         public bool Reload() { return Reload(null); }
 
@@ -190,10 +193,20 @@ namespace HCI
             string type = comboTypes.SelectedItem.ToString();
             cf.RefreshTypedBalance(type);
             myBalance.Text = this.cf.TypedBalance.ToString() + " HUF";
+            if (this.cf.TypedBalance > 0)
+            {
+                myBalance.Foreground = new SolidColorBrush(Windows.UI.Colors.Lime);
+            }
+            else
+            {
+                myBalance.Foreground = new SolidColorBrush(Windows.UI.Colors.OrangeRed);
+            }
+
             List<Finances> finances = new List<Finances>();
 
             cf.RefreshTypedFinances(type);
             finances = cf.TypedFinances;
+            
             itemGridView.ItemsSource = finances;
         }
     }
