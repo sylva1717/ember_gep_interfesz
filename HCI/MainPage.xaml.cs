@@ -28,6 +28,7 @@ namespace HCI
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
         private ConnectFinances cf = new ConnectFinances();
+        private int isDelete = 0;
 
         /// <summary>
         /// This can be changed to a strongly typed view model.
@@ -57,7 +58,8 @@ namespace HCI
 
         void bottomAppBar_Closed(object sender, object e)
         {
-            itemGridView.SelectedItem = null;
+            if(this.isDelete == 0)
+                itemGridView.SelectedItem = null;
         }
 
         /// <summary>
@@ -146,9 +148,12 @@ namespace HCI
         }
 
         
-
+        /**
+         * Elem törlése
+         **/
         private async void DeleteItem(object sender, RoutedEventArgs e)
         {
+            this.isDelete = 1;
             // Create the message dialog and set its content
             var messageDialog = new MessageDialog("Biztosan törli a kiválasztott elemet?");
 
@@ -172,6 +177,9 @@ namespace HCI
             
         }
 
+        /**
+         * Popup gombok kezelése
+         **/
         private void CommandInvokedHandler(IUICommand command)
         {
             var commandLabel = command.Label;
@@ -190,6 +198,9 @@ namespace HCI
                     }
                     break;
             }
+            this.isDelete = 0;
+            itemGridView.SelectedItem = null;
+
              
         }
 

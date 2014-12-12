@@ -27,6 +27,7 @@ namespace HCI
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
         private ConnectFinances cf = new ConnectFinances();
+        private int isUpdate = 0;
 
         /// <summary>
         /// This can be changed to a strongly typed view model.
@@ -104,13 +105,9 @@ namespace HCI
 
             if (e.Parameter != null)
             {
+                this.isUpdate = 1;
                 Finances item = (Finances)e.Parameter;
                 txtTitle.Text = item.Title;
-                txtAmount.Text = item.Amount.ToString();
-                txtDate.Date = item.Date;
-                txtTime.Time = item.Date.TimeOfDay;
-                comboTypes.SelectedItem = item.Type;
-                
                 if (item.Amount < 0)
                 {
                     itemType.SelectedIndex = 0;
@@ -119,6 +116,21 @@ namespace HCI
                 {
                     itemType.SelectedIndex = 1;
                 }
+                if (item.Amount < 0)
+                {
+                    item.Amount *= -1;
+                }
+                txtAmount.Text = item.Amount.ToString();
+                txtDate.Date = item.Date;
+                txtTime.Time = item.Date.TimeOfDay;
+                comboTypes.SelectedItem = item.Type;
+                txtId.Text = item.Id.ToString();
+                
+                
+            }
+            else
+            {
+                this.isUpdate = 0;
             }
             
             navigationHelper.OnNavigatedTo(e);
@@ -147,7 +159,17 @@ namespace HCI
             f.Amount = amount;
             f.Date = txtDate.Date.LocalDateTime + txtTime.Time;
             f.Type = comboTypes.SelectedItem.ToString();
-            cf.InsertRecord(f);
+            if (this.isUpdate == 0)
+            {
+                cf.InsertRecord(f);
+            }
+            else
+            {
+                f.Id = int.Parse(txtId.Text.ToString());
+                cf.UpdateRecord(f);
+            }
+            cf.UpdateRecord(f);
+            
             this.Frame.Navigate(typeof(MainPage));
         }
 
