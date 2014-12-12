@@ -52,6 +52,12 @@ namespace HCI
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             pageTitle.Text = "Dollar";
+            bottomAppBar.Closed += bottomAppBar_Closed;
+        }
+
+        void bottomAppBar_Closed(object sender, object e)
+        {
+            itemGridView.SelectedItem = null;
         }
 
         /// <summary>
@@ -117,7 +123,11 @@ namespace HCI
 
         #endregion
         private void addNew(object sender, RoutedEventArgs e) {
-            this.Frame.Navigate(typeof(AddItem));
+            if (itemGridView.SelectedItems.Count() > 0)
+            {
+                itemGridView.SelectedItems.Remove(itemGridView.SelectedItem);
+            }
+            this.Frame.Navigate(typeof(AddItem), itemGridView.SelectedItem);
         }
 
         private void updateItem(object sender, RoutedEventArgs e)
@@ -127,7 +137,9 @@ namespace HCI
 
         private void ItemSelected(object sender, RoutedEventArgs e)
         {
-            if (!bottomAppBar.IsOpen) {
+
+            if (itemGridView.SelectedItem != null)
+            {
                 bottomAppBar.IsOpen = true;
             }
 

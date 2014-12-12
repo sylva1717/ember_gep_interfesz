@@ -69,9 +69,7 @@ namespace HCI
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
 
-            List<string> ComboList = new List<string>();
-            ComboList = cf.Types;
-            comboTypes.ItemsSource = ComboList;
+           
          
         }
 
@@ -100,6 +98,10 @@ namespace HCI
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            List<string> ComboList = new List<string>();
+            ComboList = cf.Types;
+            comboTypes.ItemsSource = ComboList;
+
             if (e.Parameter != null)
             {
                 Finances item = (Finances)e.Parameter;
