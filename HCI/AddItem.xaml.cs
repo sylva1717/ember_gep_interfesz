@@ -68,6 +68,7 @@ namespace HCI
         /// session. The state will be null the first time a page is visited.</param>
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
+
             List<string> ComboList = new List<string>();
             ComboList = cf.Types;
             comboTypes.ItemsSource = ComboList;
@@ -99,6 +100,25 @@ namespace HCI
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            if (e.Parameter != null)
+            {
+                Finances item = (Finances)e.Parameter;
+                txtTitle.Text = item.Title;
+                txtAmount.Text = item.Amount.ToString();
+                txtDate.Date = item.Date;
+                txtTime.Time = item.Date.TimeOfDay;
+                comboTypes.SelectedItem = item.Type;
+                
+                if (item.Amount < 0)
+                {
+                    itemType.SelectedIndex = 0;
+                }
+                else
+                {
+                    itemType.SelectedIndex = 1;
+                }
+            }
+            
             navigationHelper.OnNavigatedTo(e);
         }
 

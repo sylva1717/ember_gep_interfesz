@@ -61,7 +61,7 @@ HasSelectedItems}">
                 <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" 
 Grid.Column="2">
                     <Button Content="Törlés" Click="DeleteItem"/>
-                    <Button Content="Szerkesztés"/>
+                    <Button Content="Szerkesztés" Click="updateItem"/>
                 </StackPanel>
             </Grid>
         </AppBar>
@@ -117,7 +117,7 @@ Grid.Column="2">
                         AutomationProperties.ItemType="Navigation Button"/>
             <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
-            <Button x:Name="addButton" Grid.Column="1" VerticalAlignment="Center" Click="addNew" Margin="376,57,-3,37" Height="46" Width="123" >Add new</Button>
+            <Button x:Name="addButton" Grid.Column="1" VerticalAlignment="Center" Click="updateItem" Margin="376,57,-3,37" Height="46" Width="123" >Add new</Button>
             <TextBlock x:Name="myBalance" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="3" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,30,40"/>
             <ComboBox x:Name="comboTypes" Grid.Column="2" Margin="0,59,0,0" VerticalAlignment="Top" Height="41" PlaceholderText="Összes kategória" SelectionChanged="comboTypes_SelectionChanged"/>
