@@ -136,10 +136,10 @@ namespace HCI
 
             // Add commands and set their callbacks; both buttons use the same callback function instead of inline event handlers
             messageDialog.Commands.Add(new UICommand(
-                "Yes",
+                "Igen",
                 new UICommandInvokedHandler(this.CommandInvokedHandler)));
             messageDialog.Commands.Add(new UICommand(
-                "No",
+                "Nem",
                 new UICommandInvokedHandler(this.CommandInvokedHandler)));
 
             // Set the command that will be invoked by default
@@ -150,22 +150,29 @@ namespace HCI
 
             // Show the message dialog
             await messageDialog.ShowAsync();
-            Finances f = new Finances();
-            if (itemGridView.SelectedItem != null)
-            {
-                // Create the message dialog and set its content
-
-                itemGridView.Items.Remove(itemGridView.SelectedIndex);
-                f = (Finances)itemGridView.SelectedItem;
-                cf.DeleteRecord(f);
-                this.Reload();
-            }
+           
             
         }
 
         private void CommandInvokedHandler(IUICommand command)
         {
+            var commandLabel = command.Label;
+            switch (commandLabel)
+            {
+                case "Igen":
+                    Finances f = new Finances();
+                    if (itemGridView.SelectedItem != null)
+                    {
+                        // Create the message dialog and set its content
 
+                        itemGridView.Items.Remove(itemGridView.SelectedIndex);
+                        f = (Finances)itemGridView.SelectedItem;
+                        cf.DeleteRecord(f);
+                        this.Reload();
+                    }
+                    break;
+            }
+             
         }
 
         public bool Reload() { return Reload(null); }
